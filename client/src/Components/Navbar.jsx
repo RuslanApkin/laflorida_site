@@ -113,7 +113,7 @@ export default function Navbar() {
                               className={classNames(
                                 open
                                   ? "border-accent  border-b-2"
-                                  : "text-gray-700 hover:text-accent",
+                                  : "text-gray-700 hover:text-pink",
                                 "relative flex items-center mb-0.5"
                               )}
                             >
@@ -160,7 +160,7 @@ export default function Navbar() {
                                             >
                                               <a
                                                 href={item.href}
-                                                className="hover:text-accent"
+                                                className="hover:text-pink"
                                               >
                                                 {item.name}
                                               </a>
@@ -183,7 +183,7 @@ export default function Navbar() {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center font-medium text-gray-700 hover:text-accent"
+                      className="flex items-center font-medium text-gray-700 hover:text-pink"
                     >
                       {page.name}
                     </a>

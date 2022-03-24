@@ -7,7 +7,7 @@
 //               className={classNames(
 //                 open
 //                   ? "border-accent text-accent"
-//                   : "border-transparent text-gray-700 hover:text-accent",
+//                   : "border-transparent text-gray-700 hover:text-pink",
 //                 "relative z-90 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
 //               )}
 //             >
@@ -54,7 +54,7 @@
 //                             >
 //                               <a
 //                                 href={item.href}
-//                                 className="hover:text-accent"
+//                                 className="hover:text-pink"
 //                               >
 //                                 {item.name}
 //                               </a>

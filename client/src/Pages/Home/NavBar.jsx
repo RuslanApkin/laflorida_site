@@ -106,7 +106,7 @@ export default function Navbar() {
                   <a
                     key={page.name}
                     href={page.href}
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-accent"
+                    className="flex items-center text-sm font-medium text-gray-700 hover:text-pink"
                   >
                     {page.name}
                   </a>

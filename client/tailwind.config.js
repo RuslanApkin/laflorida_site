@@ -9,6 +9,7 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
+      pink: "#e50a80",
     },
     fontFamily: {
       display: ["Inter", "system-ui", "sans-serif"],

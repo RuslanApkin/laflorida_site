@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
-import img1 from "../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
+import img1 from "../../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
 
 const product = {
   name: "Магнолия",

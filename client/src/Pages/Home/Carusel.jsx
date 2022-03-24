@@ -7,12 +7,10 @@ import { Virtual } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
-import "../index.css";
-
 // import required modules
 import { Scrollbar, Autoplay, Navigation } from "swiper";
 
-import img1 from "../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
+import img1 from "../..//img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
 
 const slides = [
   {

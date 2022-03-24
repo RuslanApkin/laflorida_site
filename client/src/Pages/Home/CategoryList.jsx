@@ -1,6 +1,6 @@
 import React from "react";
-import img1 from "../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
-import img2 from "../img/annie-spratt-hX_hf2lPpUU-unsplash.jpg";
+import img1 from "../../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
+import img2 from "../../img/annie-spratt-hX_hf2lPpUU-unsplash.jpg";
 
 const callouts = [
   {
@@ -31,9 +31,7 @@ export default function CategoryList() {
     <>
       <div className="max-w-7xl mx-auto px-8 sm:px-0">
         <div className="py-8 sm:py-10 lg:py-16 lg:max-w-none">
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
-            Категории
-          </h2>
+          <h2 className="text-xl sm:text-2xl">Категории</h2>
 
           <div className="mt-6 flex flex-wrap gap-4 justify-center">
             {callouts.map((callout) => (

@@ -15,13 +15,13 @@ const Footer = () => {
               Оптовикам
             </button>
             <div className="ml-4 mt-4 flex flex-col gap-2 justify-center">
-              <a className="text-slate-800 hover:text-accent" href="#">
+              <a className="text-slate-800 hover:text-pink" href="#">
                 Услуги
               </a>
-              <a className="text-slate-800 hover:text-accent" href="#">
+              <a className="text-slate-800 hover:text-pink" href="#">
                 Оплата и доставка
               </a>
-              <a className="text-slate-800 hover:text-accent" href="#">
+              <a className="text-slate-800 hover:text-pink" href="#">
                 Контакты
               </a>
             </div>
