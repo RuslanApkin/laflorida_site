@@ -5,10 +5,7 @@ const SocLinks = () => {
     <div>
       <ul className="flex gap-4 my-4">
         <li>
-          <a
-            href="#"
-            className="text-accent hover:translate-y-2 hover:shadow-md"
-          >
+          <a href="#" className="text-accent">
             <span className="sr-only">La Florida</span>
             <svg
               className="w-10 h-10"
@@ -44,10 +41,7 @@ const SocLinks = () => {
           </a>
         </li>
         <li>
-          <a
-            href="#"
-            className="text-accent hover:translate-y-2 hover:shadow-md"
-          >
+          <a href="#" className="text-accent">
             <span className="sr-only">La Florida</span>
             <svg
               className="w-10 h-10"
@@ -83,10 +77,7 @@ const SocLinks = () => {
           </a>
         </li>
         <li>
-          <a
-            href="#"
-            className="text-accent hover:translate-y-2 hover:shadow-md"
-          >
+          <a href="#" className="text-accent">
             <span className="sr-only">La Florida</span>
             <svg
               className="w-10 h-10"
@@ -134,10 +125,7 @@ const SocLinks = () => {
           </a>
         </li>
         <li>
-          <a
-            href="#"
-            className="text-accent hover:translate-y-2 hover:shadow-md"
-          >
+          <a href="#" className="text-accent">
             <span className="sr-only">La Florida</span>
             <svg
               className="w-10 h-10"

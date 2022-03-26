@@ -36,7 +36,7 @@ export default function ProductInfo() {
       <nav aria-label="Breadcrumb">
         <ol
           role="list"
-          className="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
+          className="mx-auto flex items-center space-x-2 pl-4 sm:pl-0"
         >
           {product.breadcrumbs.map((breadcrumb) => (
             <li key={breadcrumb.id}>

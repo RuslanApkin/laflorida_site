@@ -17,7 +17,7 @@ code {
 }
 
 .bodywrapper {
-  @apply max-w-7xl mx-auto pt-16 px-0 sm:px-16 lg:px-20;
+  @apply max-w-7xl mx-auto pt-16 px-0 sm:px-16 lg:px-20 mb-10;
 }
 
 @layer components {

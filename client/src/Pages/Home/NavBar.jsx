@@ -84,7 +84,7 @@ export default function Navbar() {
       <header className="relative bg-white z-50">
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-20"
         >
           <div className="border-b border-gray-200">
             <div className="h-16 flex items-center">
@@ -94,7 +94,7 @@ export default function Navbar() {
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
-                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                <MenuIcon className="h-6 w-6 mr-4" aria-hidden="true" />
               </button>
 
               {/* Logo */}
@@ -106,7 +106,7 @@ export default function Navbar() {
                   <a
                     key={page.name}
                     href={page.href}
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-pink"
+                    className="flex items-center font-medium text-gray-700 hover:text-pink"
                   >
                     {page.name}
                   </a>
