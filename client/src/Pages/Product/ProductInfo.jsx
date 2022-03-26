@@ -36,7 +36,7 @@ export default function ProductInfo() {
       <nav aria-label="Breadcrumb">
         <ol
           role="list"
-          className="mx-auto flex items-center space-x-2 pl-4 sm:pl-0"
+          className="mx-auto flex items-center space-x-2 pl-5 sm:pl-0 py-6"
         >
           {product.breadcrumbs.map((breadcrumb) => (
             <li key={breadcrumb.id}>
@@ -73,9 +73,9 @@ export default function ProductInfo() {
         </ol>
       </nav>
 
-      <div className="flex justify-center flex-wrap flex-row lg:flex-nowrap items-start">
+      <div className="flex justify-center flex-wrap flex-row lg:flex-nowrap items-start gap-8">
         {/* Image gallery */}
-        <div className="mt-6 rounded-xl overflow-hidden md:max-w-lg aspect-1 flex-shrink">
+        <div className="rounded-xl overflow-hidden md:max-w-lg aspect-1 flex-shrink">
           <img
             src={product.image.src}
             alt={product.image.alt}
@@ -84,22 +84,20 @@ export default function ProductInfo() {
         </div>
 
         {/* Product info */}
-        <div className="max-w-2xl w-full pt-10 pb-16 px-4 sm:px-6 lg:max-w-xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-              {product.name}
-            </h1>
-          </div>
+        <div className="max-w-2xl w-full gap-6 px-5 sm:px-0 lg:max-w-xl lg:grid lg:grid-cols-2 lg:grid-rows-[auto,1fr,1fr]">
+          <h1 className="text-2xl mb-5 lg:mb-0 font-semibold tracking-tight text-gray-900 sm:text-3xl">
+            {product.name}
+          </h1>
 
           {/* Options */}
-          <div className="mt-4 lg:mt-0 lg:row-span-3">
+          <div className="flex flex-col justify-center gap-4 lg:row-span-3 lg:border-l lg:border-gray-200 lg:pl-8 self-center">
             <h2 className="sr-only">Информация о товаре</h2>
             <p className="text-3xl text-gray-900">
               {product.currency}
               {product.price}
             </p>
 
-            <form className="mt-10">
+            <form className="flex w-full flex-col gap-5 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start">
               {/* Colors */}
               <div>
                 <h3 className="text-sm text-gray-900 font-medium">Цвет</h3>
@@ -146,12 +144,13 @@ export default function ProductInfo() {
 
               <button
                 type="submit"
-                className="mt-10 w-min-fit mx-auto bg-accent border border-transparent rounded-full py-3 px-8 flex items-center justify-center text-base font-semibold whitespace-nowrap font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className=" basis-0 w-min-fit mx-auto sm:mx-0 bg-accent border border-transparent rounded-full py-2 px-4 flex items-center justify-center text-base font-medium whitespace-nowrap text-white 
+                hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
               >
                 Добавить в
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-7 w-7 ml-1"
+                  class="h-5 w-5 ml-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -167,28 +166,26 @@ export default function ProductInfo() {
             </form>
           </div>
 
-          <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+          <div className="lg:col-start-1 lg:col-span-1">
             {/* Description and details */}
             <div>
               <h3 className="sr-only">Описание</h3>
 
-              <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
-              </div>
+              <p className="text-base text-gray-900 py-6 lg:my-0">
+                {product.description}
+              </p>
             </div>
 
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Состав</h3>
+            <h3 className="text-sm font-medium text-gray-900">Состав</h3>
 
-              <div className="mt-4">
-                <ul role="list" className="pl-4 list-disc text-sm space-y-2">
-                  {product.highlights.map((highlight) => (
-                    <li key={highlight} className="text-gray-400">
-                      <span className="text-gray-600">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="mt-4">
+              <ul role="list" className="pl-4 list-disc text-sm space-y-2">
+                {product.highlights.map((highlight) => (
+                  <li key={highlight} className="text-gray-400">
+                    <span className="text-gray-600">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
