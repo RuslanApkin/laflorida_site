@@ -5,12 +5,12 @@ import { classNames } from "../Components/utils";
 export const AddButton = ({ classN }) => {
   const cart = (
     <div className="peer-hover:opacity-0">
-      <ShoppingCartIcon className="w-6 h-6" />
+      <ShoppingCartIcon className="w-7 h-7" />
     </div>
   );
   const plus = (
     <div className="opacity-0 peer-hover:opacity-100">
-      <PlusIcon className="w-6 h-6" />
+      <PlusIcon className="w-7 h-7" />
     </div>
   );
   const [cartIcon, setCart] = useState(cart);

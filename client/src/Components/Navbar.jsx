@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment, useState } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon } from "@heroicons/react/outline";
 import Logo from "./Logo";
 import Search from "./Search";
 import Cart from "./Cart";
@@ -85,17 +85,17 @@ export default function Navbar() {
       <header className="relative bg-white z-50">
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-20"
+          className="max-w-7xl mx-auto px-5 sm:px-16 lg:px-20"
         >
-          <div className="border-b border-gray-200 py-1">
+          <div className="border-b border-gray-200">
             <div className="h-16 flex items-center">
               <button
                 type="button"
-                className="bg-white p-2 rounded-md text-gray-400 lg:hidden"
+                className="bg-white py-2 rounded-md text-gray-400 lg:hidden"
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
-                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                <MenuIcon className="h-6 w-6 mr-4" aria-hidden="true" />
               </button>
 
               {/* Logo */}
@@ -114,7 +114,7 @@ export default function Navbar() {
                                 open
                                   ? "border-accent  border-b-2"
                                   : "text-gray-700 hover:text-pink",
-                                "relative flex items-center mb-0.5"
+                                "relative flex items-center"
                               )}
                             >
                               {category.name}

@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50">
+    <footer className="bg-gray-100">
       <div className="max-w-7xl px-8 sm:px-16 lg:px-20 py-8 mx-auto">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

@@ -69,10 +69,6 @@ const navigation = {
   ],
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -84,13 +80,13 @@ export default function Navbar() {
       <header className="relative bg-white z-50">
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-20"
+          className="max-w-7xl mx-auto px-5 sm:px-16 lg:px-20"
         >
           <div className="border-b border-gray-200">
             <div className="h-16 flex items-center">
               <button
                 type="button"
-                className="bg-white p-2 rounded-md text-gray-400 md:hidden"
+                className="bg-white py-2 rounded-md text-gray-400 md:hidden"
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
