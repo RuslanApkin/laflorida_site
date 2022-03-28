@@ -1,6 +1,6 @@
 import React from "react";
 import photo from "../../img/evie-s-bSVGnUCk4tk-unsplash.jpg";
-import icon from "../../img/icon.svg";
+import CatalogBtn from "./CatalogBtn";
 
 const MainSearch = () => {
   return (
@@ -10,26 +10,19 @@ const MainSearch = () => {
         alt=""
         className="w-full h-full object-center object-cover absolute"
       />
-      <a
-        href="#"
-        className="bg-white p-2 pr-3 rounded-xl text-gray-700 gap-2 items-center min-w-fit 
-        hidden md:flex ring-2 ring-white hover:ring-accent shadow-xl z-10"
-      >
-        <img className="h-5 w-auto" src={icon} alt="" />
-        Каталог
-      </a>
+      <CatalogBtn />
       <form
         action="GET"
         className="w-full max-w-xl flex flex-row items-center translate-x-7 z-10"
       >
         <input
           class="hover:ring-accent focus:ring-accent ring-white focus:outline-none appearance-none w-full leading-6 
-            text-slate-900 placeholder-slate-400 rounded-2xl py-2 pl-5 pr-11 ring-2 shadow-xl"
+            text-slate-900 placeholder-slate-400 rounded-xl py-2 pl-5 pr-11 ring-2 shadow-xl"
           type="text"
           aria-label="Поиск"
           placeholder="Поиск"
         />
-        <button className="flex items-center justify-center w-11 h-9 bg-accent -translate-x-full rounded-2xl -m-0.5">
+        <button className="flex items-center justify-center w-11 h-9 bg-accent -translate-x-full rounded-xl -m-0.5">
           <svg
             width="20"
             height="20"

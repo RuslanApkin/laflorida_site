@@ -6,6 +6,7 @@ import Logo from "./Logo";
 import Search from "./Search";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
+import { classNames } from "./utils";
 
 const navigation = {
   categories: [
@@ -69,10 +70,6 @@ const navigation = {
     { name: "Контакты", href: "#" },
   ],
 };
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
