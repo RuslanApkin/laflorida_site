@@ -60,9 +60,7 @@ export default function ProductList() {
                   {product.name}
                 </a>
               </h3>
-              <p className="text-lg font-semibold text-gray-900">
-                {product.price}
-              </p>
+              <p className="text-lg text-gray-900">{product.price}</p>
               <AddButton classN="absolute bottom-4 lg:-bottom-2 -right-4" />
             </div>
           ))}

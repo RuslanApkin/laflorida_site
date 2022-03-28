@@ -59,7 +59,7 @@ export default function App() {
               <img
                 src={slide.imgSrc}
                 alt=""
-                className="max-h-64 w-full object-center object-cover"
+                className="max-h-64 w-full object-center object-cover group-hover:opacity-70"
               />
               <span className="absolute bg-white px-6 py-2 rounded-md w-2/4 max-w-xs h-3/4 top-[12.5%] left-[12.5%] sm:left-8">
                 <div className="w-full h-full flex flex-col justify-evenly items-start">
