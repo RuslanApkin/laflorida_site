@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import img1 from "../../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
+import { classNames } from "../../Components/utils";
 
 const product = {
   name: "Магнолия",
@@ -23,10 +24,6 @@ const product = {
   description: "Ярки букет, подойдет всем.",
   highlights: ["Розы", "Хризантемы", "Ромашки"],
 };
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function ProductInfo() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);

@@ -1,83 +1,65 @@
 import React from "react";
 import { Fragment, useState } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, Transition, Dialog } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import Logo from "./Logo";
 import Search from "./Search";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
-import { classNames } from "./utils";
+import { XIcon } from "@heroicons/react/outline";
+import temlateImg from "../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
 
-const navigation = {
-  categories: [
-    {
-      id: "catalog",
-      name: "Каталог",
-      featured: [
-        {
-          name: "Новинки",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
-          imageAlt:
-            "Drawstring top with elastic loop closure and textured interior padding.",
-        },
-        {
-          name: "Спецпредложения",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
-          imageAlt:
-            "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.",
-        },
-      ],
-      sections: [
-        {
-          id: "bouquet",
-          name: "Букеты",
-          items: [
-            { name: "Розы", href: "#" },
-            { name: "Монобукеты", href: "#" },
-            { name: "Смешанные", href: "#" },
-            { name: "Каркасные", href: "#" },
-            { name: "До 2500", href: "#" },
-          ],
-        },
-        {
-          id: "houseplants",
-          name: "Комнатные растения",
-          items: [
-            { name: "Цветущие", href: "#" },
-            { name: "Декоративно-лиственные", href: "#" },
-            { name: "Кактусы", href: "#" },
-          ],
-        },
-        {
-          id: "garden",
-          name: "Сад и огород",
-          items: [
-            { name: "Хвойники", href: "#" },
-            { name: "Многолетние", href: "#" },
-            { name: "Плодовые", href: "#" },
-          ],
-        },
-      ],
-    },
-  ],
-  pages: [
-    { name: "Услуги", href: "#" },
-    { name: "Оплата и доставка", href: "#" },
-    { name: "Контакты", href: "#" },
-  ],
-};
+const sections = [
+  {
+    id: "bouquet",
+    name: "Букеты",
+    items: [
+      { name: "Розы", href: "#" },
+      { name: "Монобукеты", href: "#" },
+      { name: "Смешанные", href: "#" },
+      { name: "Каркасные", href: "#" },
+      { name: "До 2500", href: "#" },
+    ],
+    href: "#",
+    img: temlateImg,
+  },
+  {
+    id: "houseplants",
+    name: "Комнатные растения",
+    items: [
+      { name: "Цветущие", href: "#" },
+      { name: "Декоративно-лиственные", href: "#" },
+      { name: "Кактусы", href: "#" },
+    ],
+    href: "#",
+    img: temlateImg,
+  },
+  {
+    id: "garden",
+    name: "Сад и огород",
+    items: [
+      { name: "Хвойники", href: "#" },
+      { name: "Многолетние", href: "#" },
+      { name: "Плодовые", href: "#" },
+    ],
+    href: "#",
+    img: temlateImg,
+  },
+];
+const pages = [
+  { name: "Услуги", href: "#" },
+  { name: "Оплата и доставка", href: "#" },
+  { name: "Контакты", href: "#" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  let [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white w-screen">
       {/* Mobile menu */}
-      <MobileNav navigation={navigation} open={open} setOpen={setOpen} />
+      <MobileNav open={open} setOpen={setOpen} />
 
       <header className="relative bg-white z-50">
         <nav
@@ -98,95 +80,98 @@ export default function Navbar() {
               {/* Logo */}
               <Logo />
 
+              <div className="hidden md:ml-8 md:self-stretch h-full md:flex space-x-8">
+                <button
+                  onClick={() => {
+                    setIsOpen(true);
+                    document.body.scroll("no");
+                  }}
+                  className="flex items-center font-medium text-gray-700 hover:text-pink"
+                >
+                  Каталог
+                </button>
+                {pages.map((page) => (
+                  <a
+                    key={page.name}
+                    href={page.href}
+                    className="flex items-center font-medium text-gray-700 hover:text-pink"
+                  >
+                    {page.name}
+                  </a>
+                ))}
+              </div>
+
               {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
-                <div className="h-full flex space-x-8">
-                  {navigation.categories.map((category) => (
-                    <Popover key={category.name} className="flex">
-                      {({ open }) => (
-                        <>
-                          <div className="relative flex">
-                            <Popover.Button
-                              className={classNames(
-                                open
-                                  ? "border-accent  border-b-2"
-                                  : "text-gray-700 hover:text-pink",
-                                "relative flex items-center"
-                              )}
+              <Transition
+                show={isOpen}
+                enter="transition duration-200 ease-out"
+                enterFrom="opacity-0"
+                enterTo="opacity-100 "
+                leave="transition duration-200 ease-out"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <Dialog
+                  open={isOpen}
+                  onClose={() => setIsOpen(false)}
+                  className="z-40 hidden md:block bg-white h-screen w-screen fixed top-0 left-0"
+                >
+                  <Dialog.Overlay />
+                  <div className="max-w-7xl mx-auto pb-16 pt-20 sm:px-16 lg:px-20">
+                    <div className="flex flex-row justify-between items-center mb-6">
+                      <Dialog.Title className="text-2xl font-semibold text-gray-700">
+                        Каталог
+                      </Dialog.Title>
+                      <button
+                        onClick={() => {
+                          setIsOpen(false);
+                          document.body.scroll("yes");
+                        }}
+                      >
+                        <XIcon className="h-6 w-6 text-gray-400" />
+                      </button>
+                    </div>
+
+                    <div className="relative w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+                      {sections.map((section) => (
+                        <div key={section.name}>
+                          <div className="relative">
+                            <img
+                              src={section.img}
+                              alt=""
+                              className="w-14 h-14 absolute -left-16 top-0"
+                            />
+                            <a
+                              id={`${section.name}-heading`}
+                              className="font-semibold text-xl text-gray-700 hover:text-accent"
+                              href={section.href}
                             >
-                              {category.name}
-                            </Popover.Button>
+                              {section.name}
+                            </a>
                           </div>
 
-                          <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0"
-                            enterTo="opacity-100"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
+                          <ul
+                            role="list"
+                            aria-labelledby={`${section.name}-heading`}
+                            className="mt-4 pl-4 space-y-4 sm:mt-3 sm:space-y-3"
                           >
-                            <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div
-                                className="absolute inset-0 top-1/2 bg-white shadow"
-                                aria-hidden="true"
-                              />
-
-                              <div className="relative bg-white">
-                                <div className="max-w-7xl mx-auto p-8">
-                                  <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8">
-                                    {category.sections.map((section) => (
-                                      <div key={section.name}>
-                                        <p
-                                          id={`${section.name}-heading`}
-                                          className="font-medium text-gray-900"
-                                        >
-                                          {section.name}
-                                        </p>
-                                        <ul
-                                          role="list"
-                                          aria-labelledby={`${section.name}-heading`}
-                                          className="mt-4 p-2 space-y-6 sm:mt-3 sm:space-y-4"
-                                        >
-                                          {section.items.map((item) => (
-                                            <li
-                                              key={item.name}
-                                              className="flex"
-                                            >
-                                              <a
-                                                href={item.href}
-                                                className="hover:text-pink"
-                                              >
-                                                {item.name}
-                                              </a>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
-                                    ))}
-                                  </div>
-                                </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      )}
-                    </Popover>
-                  ))}
-
-                  {navigation.pages.map((page) => (
-                    <a
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center font-medium text-gray-700 hover:text-pink"
-                    >
-                      {page.name}
-                    </a>
-                  ))}
-                </div>
-              </Popover.Group>
+                            {section.items.map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.href}
+                                  className="hover:text-pink text-lg text-gray-700"
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
 
               <div className="ml-auto flex items-center">
                 {/* Search */}

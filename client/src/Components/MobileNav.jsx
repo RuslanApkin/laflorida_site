@@ -1,12 +1,78 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
+
+const navigation = {
+  categories: [
+    {
+      id: "catalog",
+      name: "Каталог",
+      featured: [
+        {
+          name: "Новинки",
+          href: "#",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
+          imageAlt:
+            "Drawstring top with elastic loop closure and textured interior padding.",
+        },
+        {
+          name: "Спецпредложения",
+          href: "#",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
+          imageAlt:
+            "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.",
+        },
+      ],
+      sections: [
+        {
+          id: "bouquet",
+          name: "Букеты",
+          items: [
+            { name: "Розы", href: "#" },
+            { name: "Монобукеты", href: "#" },
+            { name: "Смешанные", href: "#" },
+            { name: "Каркасные", href: "#" },
+            { name: "До 2500", href: "#" },
+          ],
+          href: "#",
+        },
+        {
+          id: "houseplants",
+          name: "Комнатные растения",
+          items: [
+            { name: "Цветущие", href: "#" },
+            { name: "Декоративно-лиственные", href: "#" },
+            { name: "Кактусы", href: "#" },
+          ],
+          href: "#",
+        },
+        {
+          id: "garden",
+          name: "Сад и огород",
+          items: [
+            { name: "Хвойники", href: "#" },
+            { name: "Многолетние", href: "#" },
+            { name: "Плодовые", href: "#" },
+          ],
+          href: "#",
+        },
+      ],
+    },
+  ],
+  pages: [
+    { name: "Услуги", href: "#" },
+    { name: "Оплата и доставка", href: "#" },
+    { name: "Контакты", href: "#" },
+  ],
+};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function MobileNav({ navigation, open, setOpen }) {
+export default function MobileNav({ open, setOpen }) {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog

@@ -1,7 +1,6 @@
 import React from "react";
-import { Fragment, useState } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { useState } from "react";
+import { MenuIcon } from "@heroicons/react/outline";
 import Logo from "../../Components/Logo";
 import Cart from "../../Components/Cart";
 import MobileNav from "../../Components/MobileNav";
@@ -73,7 +72,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white w-screen">
       {/* Mobile menu */}
       <MobileNav navigation={navigation} open={open} setOpen={setOpen} />
 

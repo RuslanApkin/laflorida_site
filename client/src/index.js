@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
@@ -12,3 +12,10 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+// window.addEventListener("resize", () => {
+//   let docWidth =
+//     document.documentElement.clientWidth || document.body.clientWidth;
+//   document.body.style.maxWidth = docWidth;
+//   console.log(docWidth);
+// });

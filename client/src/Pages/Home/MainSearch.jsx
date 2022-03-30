@@ -4,19 +4,19 @@ import CatalogBtn from "./CatalogBtn";
 
 const MainSearch = () => {
   return (
-    <div className="relative w-full max-w-6xl p-6 mt-6 h-48 sm:h-64 sm:rounded-xl overflow-hidden flex flex-row justify-center items-center">
+    <div className="relative w-full max-w-6xl p-6 mt-6 h-48 sm:h-64 sm:rounded-xl overflow-hidden flex flex-row justify-center items-center z-40 flex-shrink-0">
+      <CatalogBtn />
       <img
         src={photo}
         alt=""
-        className="w-full h-full object-center object-cover absolute"
+        className="w-full h-full object-center object-cover absolute -z-10"
       />
-      <CatalogBtn />
       <form
         action="GET"
-        className="w-full max-w-xl flex flex-row items-center translate-x-7 z-10"
+        className="w-full max-w-xl flex flex-row items-center translate-x-7"
       >
         <input
-          class="hover:ring-accent focus:ring-accent ring-white focus:outline-none appearance-none w-full leading-6 
+          className="hover:ring-accent focus:ring-accent ring-white focus:outline-none appearance-none w-full leading-6 
             text-slate-900 placeholder-slate-400 rounded-xl py-2 pl-5 pr-11 ring-2 shadow-xl"
           type="text"
           aria-label="Поиск"
