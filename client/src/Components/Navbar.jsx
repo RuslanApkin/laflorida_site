@@ -1,6 +1,6 @@
 import React from "react";
-import { Fragment, useState } from "react";
-import { Popover, Transition, Dialog } from "@headlessui/react";
+import { useState } from "react";
+import { Transition, Dialog } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import Logo from "./Logo";
 import Search from "./Search";

@@ -1,6 +1,6 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import icon from "../../img/icon.svg";
-import { Popover, Transition, Dialog } from "@headlessui/react";
+import { Transition, Dialog } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import temlateImg from "../../img/leonardo-wong-7pGehyH7o64-unsplash.jpg";
 
